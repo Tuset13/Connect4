@@ -11,12 +11,13 @@ public class AjudaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.Ajuda);
+        setContentView(R.layout.ajuda);
         Button tornar = findViewById(R.id.Tornar);
         tornar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AjudaActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
