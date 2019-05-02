@@ -1,6 +1,14 @@
 <resources>
+    <!--STRINGS DE PANTALLA PRINCIPAL-->
     <string name="app_name">Connect4</string>
     <string name="ajuda">Ajuda</string>
     <string name="començar">Començar Partida</string>
     <string name="sortir">Sortir</string>
-</resources>
+    <!--STRINGS DE AJUDA-->
+    <string name="explicacio"> El joc consisteix en anar introduint fitxes en un tauler vertical amb l\'objectiu d\'alinear 4 consecutives del color assignat al jugador (roig) abans que el teu oponent.</string>
+    <string name="explicacio1"> A cada torn, el jugador introdueix una fitxa a la columna triada(sempre i quan no estigui completa), i aquesta cau a la posició més baixa possible.</string>
+    <string name="explicacio2"> Guanya la partida el jugador que primer aconsegueix alinear 4 fitxes consecutives del seu color en horitzonal, vertical o diagonal.</string>
+    <string name="explicacio3"> Si totes les columnes estan plenes i ningú ha aconseguit alinear-ne 4 fitxes, hi ha empat.</string>
+    <string name="tornar">Tornar al Menu</string>
+
+    </resources>
