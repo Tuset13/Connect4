@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlack"
     android:orientation="vertical"
     tools:context=".ConfiguracioInicial">
 
@@ -11,7 +12,8 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        style="@style/estilLletra"
+        android:text="@string/alias" />
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
