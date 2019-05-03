@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent1);
                         break;
                     case R.id.surtir_button:
-                        finishAffinity();
+                        finish();
                 }
             }
         };
