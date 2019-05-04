@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
+    android:background="@color/colorBlack"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -15,26 +14,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        style="@style/estilLletra"
         android:text="@string/explicacio" />
     <TextView
         android:id="@+id/explicacio1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        style="@style/estilLletra"
         android:text="@string/explicacio1"
-        android:gravity="center" />
+         />
     <TextView
         android:id="@+id/explicacio2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        style="@style/estilLletra"
         android:text="@string/explicacio2"
-        android:gravity="center" />
+         />
     <TextView
         android:id="@+id/explicacio3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/explicacio3"
         android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        style="@style/estilLletra"
         android:layout_marginBottom="15dp"
+        android:text="@string/explicacio3"
         />
     <Button
         android:id="@+id/Tornar"
