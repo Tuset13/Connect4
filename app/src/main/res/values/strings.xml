@@ -12,5 +12,6 @@
     <string name="tornar">Tornar al Menu</string>
     <!--STRINGS DE CONFIGURACIO INICIAL-->
     <string name="alias">Alias Identificatiu</string>
+    <string name="aliasintro">Introduir Alias</string>
 
     </resources>
