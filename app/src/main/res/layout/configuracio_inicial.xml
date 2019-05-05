@@ -5,14 +5,17 @@
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
     android:orientation="vertical"
-    tools:context=".ConfiguracioInicial">
+    tools:context=".ConfiguracioInicial"
+    >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Alias"
         style="@style/estilLletra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22dp"
+        android:textSize="22sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/alias"
         />
     <EditText
@@ -20,10 +23,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="13"
+        android:layout_marginStart="15dp"
         android:hint="@string/aliasintro"
         android:theme="@style/EditTextStyle"
         android:inputType="textPersonName"
         android:textColorHint="@color/colorRetro"
         android:textColor="@color/colorRetro"
         />
+
+    <TextView
+        android:id="@+id/Graella"
+        style="@style/estilLletra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/graella"
+        android:textSize="22sp" />
+
+    <RadioGroup
+        android:id="@+id/Graella1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:checkedButton="@+id/mida1"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/mida1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/num1"
+            android:textSize="20sp"
+            style="@style/estilLletra"
+            android:layout_marginStart="15dp"/>
+
+        <RadioButton
+            android:id="@+id/mida2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/num2"
+            android:textSize="20sp"
+            style="@style/estilLletra"
+            android:layout_marginStart="15dp"/>
+
+        <RadioButton
+            android:id="@+id/mida3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/num3"
+            android:textSize="20sp"
+            style="@style/estilLletra"
+            android:layout_marginStart="15dp"/>
+    </RadioGroup>
+
 </LinearLayout>

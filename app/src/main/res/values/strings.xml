@@ -13,5 +13,9 @@
     <!--STRINGS DE CONFIGURACIO INICIAL-->
     <string name="alias">Alias Identificatiu</string>
     <string name="aliasintro">Introduir Alias</string>
+    <string name="graella">Mida Graella</string>
+    <string name="num1">7</string>
+    <string name="num2">6</string>
+    <string name="num3">5</string>
 
     </resources>
