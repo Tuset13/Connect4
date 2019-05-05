@@ -17,5 +17,6 @@
     <string name="num1">7</string>
     <string name="num2">6</string>
     <string name="num3">5</string>
+    <string name="temps">Control de Temps</string>
 
     </resources>
