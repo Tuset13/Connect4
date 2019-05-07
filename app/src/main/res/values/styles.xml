@@ -16,9 +16,9 @@
     </style>
 
     <style name="EditTextStyle" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@color/colorRetro</item>
-        <item name="colorControlActivated">@color/colorRetro</item>
-        <item name="android:colorAccent">@color/colorRetro</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:colorAccent">@color/colorPrimary</item>
     </style>
 
 </resources>
