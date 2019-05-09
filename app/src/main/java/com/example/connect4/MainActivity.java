@@ -15,9 +15,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Button ajuda = findViewById(R.id.ajuda_button);
         Button start = findViewById(R.id.config_button);
-        Button surtir = findViewById(R.id.config_button);
+        Button sortir = findViewById(R.id.sortir_button);
 
-        surtir.setOnClickListener(this);
+        sortir.setOnClickListener(this);
         start.setOnClickListener(this);
         ajuda.setOnClickListener(this);
 
@@ -33,8 +33,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 Intent intent1 = new Intent(MainActivity.this, ConfiguracioInicial.class);
                 startActivity(intent1);
                 break;
-            case R.id.surtir_button:
-                this.finish();
+            case R.id.sortir_button:
+                finish();
                 break;
         }
     }

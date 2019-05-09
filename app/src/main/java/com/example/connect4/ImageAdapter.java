@@ -9,13 +9,15 @@ import android.widget.ImageView;
 
 public class ImageAdapter extends BaseAdapter {
     private Context context;
+    private Integer[] myimages;
+    private int num;
 
     public ImageAdapter (Context c){
         context = c;
     }
     @Override
     public int getCount() {
-        return 0;
+        return myimages.length;
     }
 
     @Override
@@ -43,7 +45,13 @@ public class ImageAdapter extends BaseAdapter {
         imageView.setImageResource(myimages[position]);
         return imageView;
     }
-    private Integer[] myimages = {
-        0
-    };
+
+    public void setGrid(int i) {
+        this.num = i;
+        myimages = new Integer[i * i];
+        for (int x = 0; x < i * i; x++){
+            myimages[x] = R.drawable.empty_round;
+        }
+    }
+
 }
