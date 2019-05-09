@@ -13,7 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:srcCompat="@drawable/ajuda" />
+        android:src="@drawable/ajuda" />
 
     <TextView
         android:id="@+id/explicacio"
@@ -73,7 +73,7 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="81dp"
-            tools:srcCompat="@drawable/lema"
+            android:src="@drawable/lema"
             android:layout_gravity="bottom"/>
 
     </LinearLayout>
