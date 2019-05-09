@@ -7,7 +7,7 @@
     android:background="@color/colorBlack"
     android:gravity="center|top"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".AjudaActivity">
 
     <ImageView
         android:id="@+id/imageView"

@@ -16,10 +16,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button ajuda = findViewById(R.id.ajuda_button);
         Button start = findViewById(R.id.config_button);
         Button sortir = findViewById(R.id.sortir_button);
+        Button resultats = findViewById(R.id.resultats);
 
         sortir.setOnClickListener(this);
         start.setOnClickListener(this);
         ajuda.setOnClickListener(this);
+        resultats.setOnClickListener(this);
 
     }
 
@@ -35,6 +37,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.sortir_button:
                 finish();
+                break;
+            case R.id.resultats:
+                Intent intent2 = new Intent(MainActivity.this, ResultatsActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

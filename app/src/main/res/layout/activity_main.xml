@@ -35,4 +35,10 @@
         android:layout_height="wrap_content"
         android:text="@string/sortir" />
 
+    <Button
+        android:id="@+id/resultats"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Resultats" />
+
 </LinearLayout>
