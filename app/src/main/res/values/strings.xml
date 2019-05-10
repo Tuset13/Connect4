@@ -18,6 +18,9 @@
     <string name="num2">6</string>
     <string name="num3">5</string>
     <string name="temps">Control de Temps</string>
+    <string name="aliaskey">aliaskey</string>
+    <string name="graellakey">graellakey</string>
+    <string name="tempskey">tempskey</string>
     <!--STRINGS DE RESULTATS-->
     <string name="horari">Dia i hora</string>
     <string name="logval">Valors del log</string>
