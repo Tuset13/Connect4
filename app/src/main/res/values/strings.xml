@@ -25,6 +25,7 @@
     <string name="sendemail">Enviar e-mail</string>
     <string name="newGame">Nova Partida</string>
     <string name="sendingEmail">Preparant Correu</string>
+    <string name="emailexemple">algu@email.com</string>
 
 
     </resources>

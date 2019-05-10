@@ -24,6 +24,10 @@ public class ResultatsActivity extends Activity implements View.OnClickListener 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
+
+        EditText edtMail = findViewById(R.id.editText2);
+
+        edtMail.requestFocus();
     }
 
     @Override
@@ -37,7 +41,7 @@ public class ResultatsActivity extends Activity implements View.OnClickListener 
             case R.id.email_button:
                 Toast.makeText(this, getString(R.string.sendingEmail), Toast.LENGTH_LONG).show();
                 Intent in = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + edtMail.getText().toString()));
-                in.putExtra(Intent.EXTRA_SUBJECT, edtDia.getText().toString());
+                in.putExtra(Intent.EXTRA_SUBJECT, "Log - " + edtDia.getText().toString());
                 in.putExtra(Intent.EXTRA_TEXT, edtLog.getText().toString());
                 startActivity(in);
                 break;
