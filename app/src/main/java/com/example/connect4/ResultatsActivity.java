@@ -48,6 +48,7 @@ public class ResultatsActivity extends Activity implements View.OnClickListener 
             case R.id.newGame_button:
                 Intent intent1 = new Intent(ResultatsActivity.this, ConfiguracioInicial.class);
                 startActivity(intent1);
+                finish();
                 break;
             case R.id.exit_button:
                 finish();

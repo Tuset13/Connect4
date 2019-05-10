@@ -16,8 +16,7 @@ public class AjudaActivity extends AppCompatActivity {
         tornar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AjudaActivity.this, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

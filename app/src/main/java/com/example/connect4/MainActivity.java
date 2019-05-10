@@ -41,6 +41,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.resultats:
                 Intent intent2 = new Intent(MainActivity.this, ResultatsActivity.class);
                 startActivity(intent2);
+                finish();
                 break;
         }
     }
