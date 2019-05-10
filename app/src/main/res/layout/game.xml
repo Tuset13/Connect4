@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="bottom"
     android:orientation="vertical"
     tools:context=".GameActivity"
     android:background="@color/colorBlack">
 
-
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="425dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="1dp"
+        />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:src="@drawable/lema"
+        android:layout_gravity="bottom"/>
+
 </LinearLayout>

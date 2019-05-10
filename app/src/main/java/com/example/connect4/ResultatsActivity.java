@@ -15,7 +15,7 @@ public class ResultatsActivity extends Activity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.resultats);
+        setContentView(R.layout.results);
 
         Button btn1 = findViewById(R.id.email_button);
         Button btn2 = findViewById(R.id.newGame_button);
