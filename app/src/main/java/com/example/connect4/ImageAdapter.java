@@ -52,7 +52,7 @@ public class ImageAdapter extends BaseAdapter {
         this.num = i;
         myimages = new Integer[i * i];
         for (int x = 0; x < i * i; x++) {
-            myimages[x] = R.drawable.fitxa_blanca;
+            myimages[x] = R.drawable.white_circle;
         }
     }
 
