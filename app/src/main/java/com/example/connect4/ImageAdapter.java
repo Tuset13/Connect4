@@ -48,6 +48,7 @@ public class ImageAdapter extends BaseAdapter {
         return imageView;
     }
 
+    //Construccio del grid
     public void setGrid(int i) {
         this.num = i;
         myimages = new Integer[i * i];

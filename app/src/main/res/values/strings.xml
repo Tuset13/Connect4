@@ -4,12 +4,14 @@
     <string name="ajuda">Ajuda</string>
     <string name="començar">Començar Partida</string>
     <string name="sortir">Sortir</string>
+
     <!--STRINGS DE AJUDA-->
     <string name="explicacio"> El joc consisteix en anar introduint fitxes en un tauler vertical amb l\'objectiu d\'alinear 4 consecutives del color assignat al jugador (roig) abans que el teu oponent.</string>
     <string name="explicacio1"> A cada torn, el jugador introdueix una fitxa a la columna triada(sempre i quan no estigui completa), i aquesta cau a la posició més baixa possible.</string>
     <string name="explicacio2"> Guanya la partida el jugador que primer aconsegueix alinear 4 fitxes consecutives del seu color en horitzonal, vertical o diagonal.</string>
     <string name="explicacio3"> Si totes les columnes estan plenes i ningú ha aconseguit alinear-ne 4 fitxes, hi ha empat.</string>
     <string name="tornar">Tornar al Menu</string>
+
     <!--STRINGS DE CONFIGURACIO INICIAL-->
     <string name="alias">Alias Identificatiu</string>
     <string name="aliasintro">Introduir Alias</string>
@@ -21,6 +23,7 @@
     <string name="aliaskey">aliaskey</string>
     <string name="graellakey">graellakey</string>
     <string name="tempskey">tempskey</string>
+
     <!--STRINGS DE RESULTATS-->
     <string name="horari">Dia i hora</string>
     <string name="logval">Valors del log</string>

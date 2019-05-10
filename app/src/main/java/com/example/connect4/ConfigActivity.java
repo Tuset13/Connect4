@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class ConfiguracioInicial extends Activity implements View.OnClickListener{
+public class ConfigActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,20 @@ public class ConfiguracioInicial extends Activity implements View.OnClickListene
 
         switch (v.getId()) {
             case R.id.start_button:
-                Bundle data = new Bundle();
-                EditText editText = findViewById(R.id.editTextAlias);
-                RadioGroup graella = findViewById(R.id.Graella1);
+                EditText alias = findViewById(R.id.editTextAlias);
+                RadioGroup graella = findViewById(R.id.editGraella);
+                CheckBox temps = findViewById(R.id.time_checkBox);
+
                 int selectedId = graella.getCheckedRadioButtonId();
                 RadioButton radioButton = findViewById(selectedId);
-                CheckBox temps = findViewById(R.id.checkBox);
-                data.putString(getString(R.string.aliaskey), editText.getText().toString());
+
+                Bundle data = new Bundle();
+
+
+                data.putString(getString(R.string.aliaskey), alias.getText().toString());
                 data.putInt(getString(R.string.graellakey), Integer.parseInt(radioButton.getText().toString()));
                 data.putBoolean(getString(R.string.tempskey), temps.isChecked());
+
                 Intent intent = new Intent(this, GameActivity.class);
                 intent.putExtras(data);
                 startActivity(intent);

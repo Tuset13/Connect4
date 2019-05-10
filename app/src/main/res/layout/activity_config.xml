@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
     android:orientation="vertical"
-    tools:context=".ConfiguracioInicial"
+    tools:context=".ConfigActivity"
     >
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/config_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/configuracio_cat" />
@@ -50,7 +50,7 @@
         android:drawableStart="@drawable/ic_matrix"/>
 
     <RadioGroup
-        android:id="@+id/Graella1"
+        android:id="@+id/editGraella"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:checkedButton="@+id/mida1"
@@ -98,7 +98,7 @@
         android:textSize="22sp" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/time_checkBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
@@ -128,7 +128,7 @@
         android:orientation="vertical" >
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/eslogan_image2"
             android:layout_width="match_parent"
             android:layout_height="81dp"
             android:src="@drawable/lema"

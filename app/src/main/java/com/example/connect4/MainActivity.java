@@ -14,12 +14,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         Button ajuda = findViewById(R.id.ajuda_button);
-        Button start = findViewById(R.id.config_button);
+        Button config = findViewById(R.id.config_button);
         Button sortir = findViewById(R.id.sortir_button);
         Button resultats = findViewById(R.id.resultats);
 
         sortir.setOnClickListener(this);
-        start.setOnClickListener(this);
+        config.setOnClickListener(this);
         ajuda.setOnClickListener(this);
         resultats.setOnClickListener(this);
 
@@ -28,18 +28,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ajuda_button:
-                Intent intent = new Intent(MainActivity.this, AjudaActivity.class);
+                Intent intent = new Intent(MainActivity.this, HelpActivity.class);
                 startActivity(intent);
                 break;
             case R.id.config_button:
-                Intent intent1 = new Intent(MainActivity.this, ConfiguracioInicial.class);
+                Intent intent1 = new Intent(MainActivity.this, ConfigActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.sortir_button:
                 finish();
                 break;
             case R.id.resultats:
-                Intent intent2 = new Intent(MainActivity.this, ResultatsActivity.class);
+                Intent intent2 = new Intent(MainActivity.this, ResultsActivity.class);
                 startActivity(intent2);
                 finish();
                 break;

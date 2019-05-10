@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class ResultatsActivity extends Activity implements View.OnClickListener {
+public class ResultsActivity extends Activity implements View.OnClickListener {
 
 
     @Override
@@ -17,13 +17,13 @@ public class ResultatsActivity extends Activity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results);
 
-        Button btn1 = findViewById(R.id.email_button);
-        Button btn2 = findViewById(R.id.newGame_button);
-        Button btn3 = findViewById(R.id.exit_button);
+        Button email = findViewById(R.id.email_button);
+        Button newGame = findViewById(R.id.newGame_button);
+        Button exit = findViewById(R.id.exit_button);
 
-        btn1.setOnClickListener(this);
-        btn2.setOnClickListener(this);
-        btn3.setOnClickListener(this);
+        email.setOnClickListener(this);
+        newGame.setOnClickListener(this);
+        exit.setOnClickListener(this);
 
         EditText edtMail = findViewById(R.id.editText2);
 
@@ -46,7 +46,7 @@ public class ResultatsActivity extends Activity implements View.OnClickListener 
                 startActivity(in);
                 break;
             case R.id.newGame_button:
-                Intent intent1 = new Intent(ResultatsActivity.this, ConfiguracioInicial.class);
+                Intent intent1 = new Intent(ResultsActivity.this, ConfigActivity.class);
                 startActivity(intent1);
                 finish();
                 break;

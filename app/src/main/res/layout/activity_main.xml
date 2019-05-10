@@ -10,7 +10,7 @@
     android:background="@color/colorBlack">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/connect4_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/connect4"
