@@ -22,7 +22,7 @@ public class Game {
         Date date = new Date();
         this.startTime = date.getTime();
 
-        this.restTime = 100000;
+        this.restTime = 50000;
 
     }
 

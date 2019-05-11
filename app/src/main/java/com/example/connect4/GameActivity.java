@@ -59,7 +59,7 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
 
         table.setChip(R.drawable.greenchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
-
+        game.manageTime();
 
         if(game.checkForFinish()) {
             Intent next = new Intent(GameActivity.this, ResultsActivity.class);
