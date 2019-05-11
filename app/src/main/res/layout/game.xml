@@ -7,13 +7,14 @@
     tools:context=".GameActivity"
     android:background="@color/colorBlack">
 
-    <!--<TextView-->
-        <!--android:id="@+id/clock"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--style="@style/estilLletra"-->
-        <!--android:layout_gravity="right"-->
-        <!--/>-->
+    <TextView
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/estilLletra"
+        android:layout_gravity="right"
+        />
+
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="wrap_content"

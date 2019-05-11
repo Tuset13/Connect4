@@ -32,11 +32,9 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
         EditText edtlog = findViewById(R.id.editText1);
         EditText edtMail = findViewById(R.id.editText2);
 
-        Date Date = new Date();
-
         edtlog.setText(intent.getStringExtra("aliaskey")+" Mida Graella: ");
         edtlog.append(String.valueOf(intent.getIntExtra("midakey",-1))+" "+intent.getStringExtra("statuskey"));
-        edthour.setText(Date.toString());
+        edthour.setText(new Date().toString());
         edtMail.requestFocus();
     }
 

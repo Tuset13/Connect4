@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.example.connect4.logic_code.Game;
 import com.example.connect4.logic_code.Position;
 import com.example.connect4.logic_code.Status;
+
+import java.util.Date;
 
 public class GameActivity extends Activity implements AdapterView.OnItemClickListener {
 
@@ -43,9 +46,13 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
 
         int col = position % size;
         Position pos = game.drop(col);
+        TextView text = findViewById(R.id.clock);
+        Long temps = new Date().getTime();
+        text.setText(String.valueOf((temps-game.getStartTime())/1000));
 
         table.setChip(R.drawable.redchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
+        game.manageTime();
 
         if(game.checkForFinish()) {
             Intent next = new Intent(GameActivity.this, ResultsActivity.class);
@@ -56,6 +63,8 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         }
         col = game.playOpponent();
         pos = game.drop(col);
+
+        //JUGARA LA MAQUINA
 
         table.setChip(R.drawable.greenchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
