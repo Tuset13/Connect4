@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Date;
+
 public class ResultsActivity extends Activity implements View.OnClickListener {
 
 
@@ -25,8 +27,16 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
         newGame.setOnClickListener(this);
         exit.setOnClickListener(this);
 
+        Intent intent = getIntent();
+        EditText edthour = findViewById(R.id.editText);
+        EditText edtlog = findViewById(R.id.editText1);
         EditText edtMail = findViewById(R.id.editText2);
 
+        Date Date = new Date();
+
+        edtlog.setText(intent.getStringExtra("aliaskey")+" Mida Graella: ");
+        edtlog.append(String.valueOf(intent.getIntExtra("midakey",-1))+" "+intent.getStringExtra("statuskey"));
+        edthour.setText(Date.toString());
         edtMail.requestFocus();
     }
 

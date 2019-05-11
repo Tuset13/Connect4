@@ -22,7 +22,7 @@ public class Game {
         Date date = new Date();
         this.startTime = date.getTime();
 
-        this.restTime = 25;
+        this.restTime = 100000;
 
     }
 
@@ -60,7 +60,7 @@ public class Game {
         }
     }
 
-    void manageTime() {
+    public void manageTime() {
         Date actualDate = new Date();
         long actualTime = actualDate.getTime();
         long timePassed = actualTime - this.startTime;
@@ -107,6 +107,10 @@ public class Game {
 
     public long getRestTime() {
         return restTime;
+    }
+
+    public long getStartTime() {
+        return startTime;
     }
 
     public Board getBoard() {
