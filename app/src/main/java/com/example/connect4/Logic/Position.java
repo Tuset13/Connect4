@@ -1,4 +1,4 @@
-package com.example.connect4.logic_code;
+package com.example.connect4.Logic;
 
 public class Position {
 

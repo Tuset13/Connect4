@@ -8,9 +8,9 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
-import com.example.connect4.logic_code.Game;
-import com.example.connect4.logic_code.Position;
-import com.example.connect4.logic_code.Status;
+import com.example.connect4.Logic.Game;
+import com.example.connect4.Logic.Position;
+import com.example.connect4.Logic.Status;
 
 import java.util.Date;
 
@@ -47,12 +47,12 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         int col = position % size;
         Position pos = game.drop(col);
         TextView text = findViewById(R.id.clock);
-        Long temps = new Date().getTime();
-        text.setText(String.valueOf((temps-game.getStartTime())/1000));
 
         table.setChip(R.drawable.redchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
         game.manageTime();
+        Long temps = new Date().getTime();
+        text.setText(String.valueOf((temps-game.getStartTime())/1000)+ "seconds");
 
         if(game.checkForFinish()) {
             Intent next = new Intent(GameActivity.this, ResultsActivity.class);

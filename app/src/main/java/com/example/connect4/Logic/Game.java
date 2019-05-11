@@ -1,4 +1,4 @@
-package com.example.connect4.logic_code;
+package com.example.connect4.Logic;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ public class Game {
     private boolean hasWinner;
     private Player turn;
     private long startTime;
-    private long restTime;
+    private long gameTime;
 
     public Game(int size, int connectToWin) {
         this.board = new Board(size);
@@ -22,7 +22,7 @@ public class Game {
         Date date = new Date();
         this.startTime = date.getTime();
 
-        this.restTime = 50000;
+        this.gameTime = 25;
 
     }
 
@@ -63,10 +63,9 @@ public class Game {
     public void manageTime() {
         Date actualDate = new Date();
         long actualTime = actualDate.getTime();
-        long timePassed = actualTime - this.startTime;
-        this.restTime = this.restTime - timePassed;
+        long timePassed = (actualTime - this.startTime)/1000;//Mira el temps que ha passat en segons
 
-        if (this.restTime < 0) {
+        if (timePassed > this.gameTime) {
             if (this.turn.isPlayer1()) {
                 this.status = Status.PLAYER2_WINS;
             } else if (this.turn.isPlayer2()) {
@@ -105,8 +104,8 @@ public class Game {
     }
 
 
-    public long getRestTime() {
-        return restTime;
+    public long getGameTime() {
+        return gameTime;
     }
 
     public long getStartTime() {

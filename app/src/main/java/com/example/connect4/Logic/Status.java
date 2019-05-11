@@ -1,4 +1,4 @@
-package com.example.connect4.logic_code;
+package com.example.connect4.Logic;
 
 public enum Status {
     PLAYER1_PLAYS,

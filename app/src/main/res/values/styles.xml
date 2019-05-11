@@ -13,6 +13,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/colorRetro</item>
         <item name="android:typeface">monospace</item>
+        <item name="android:fontFamily">@font/space_invaders</item>
     </style>
 
     <style name="EditTextStyle" parent="Theme.AppCompat.Light">
