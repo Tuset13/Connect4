@@ -32,6 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.config_button:
                 Intent intent1 = new Intent(MainActivity.this, ConfigActivity.class);
                 startActivity(intent1);
+                finish();
                 break;
             case R.id.sortir_button:
                 finish();

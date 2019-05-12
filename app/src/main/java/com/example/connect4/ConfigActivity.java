@@ -44,6 +44,7 @@ public class ConfigActivity extends Activity implements View.OnClickListener{
                 Intent intent = new Intent(this, GameActivity.class);
                 intent.putExtras(data);
                 startActivity(intent);
+                finish();
                 break;
         }
     }
