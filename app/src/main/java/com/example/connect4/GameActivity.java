@@ -19,6 +19,7 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
     private ImageAdapter table;
     private Game game;
     private int size;
+    private boolean time;
     private Bundle data = new Bundle();
 
     @Override
@@ -28,6 +29,7 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
 
         Intent intent = getIntent();
         size = intent.getIntExtra("graellakey",-1);
+        time = intent.getBooleanExtra("tempskey",false);
         data.putInt("midakey",size);
         data.putString("aliaskey",intent.getStringExtra("aliaskey"));
 
@@ -50,7 +52,9 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
 
         table.setChip(R.drawable.redchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
-        game.manageTime();
+        if(time)
+            game.manageTime();
+
         Long temps = new Date().getTime();
         text.setText(String.valueOf((temps-game.getStartTime())/1000)+ "seconds");
 
@@ -68,7 +72,8 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
 
         table.setChip(R.drawable.greenchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
-        game.manageTime();
+        if(time)
+            game.manageTime();
 
         if(game.checkForFinish()) {
             Intent next = new Intent(GameActivity.this, ResultsActivity.class);
