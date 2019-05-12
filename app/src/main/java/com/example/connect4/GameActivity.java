@@ -26,6 +26,7 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
+        TextView text = findViewById(R.id.clock);
 
         Intent intent = getIntent();
         size = intent.getIntExtra("graellakey", -1);
@@ -34,6 +35,7 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         data.putString("aliaskey", intent.getStringExtra("aliaskey"));
 
         game = new Game(size, 4);
+        text.setText(game.getGameTime() + " seconds");
         GridView gridView = findViewById(R.id.grid_view);
         table = new ImageAdapter(this);
 
@@ -55,8 +57,8 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         if (time)
             game.manageTime();
 
-        Long temps = new Date().getTime();
-        text.setText(String.valueOf((temps - game.getStartTime()) / 1000) + "seconds");
+        long temps = new Date().getTime();
+        text.setText(Math.abs(((temps - game.getStartTime()) / 1000) - game.getGameTime()) + " seconds");
 
         if (game.checkForFinish()) {
             Intent next = new Intent(GameActivity.this, ResultsActivity.class);
