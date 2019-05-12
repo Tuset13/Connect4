@@ -19,7 +19,7 @@
         style="@style/estilLletra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:text="@string/alias"
@@ -46,46 +46,60 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:text="@string/graella"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:drawableStart="@drawable/ic_matrix"/>
 
-    <RadioGroup
-        android:id="@+id/editGraella"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:checkedButton="@+id/mida1"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/mida1"
+        <RadioGroup
+            android:id="@+id/editGraella"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/num1"
-            android:textSize="20sp"
-            style="@style/estilLletra"
-            android:layout_marginStart="15dp"
-            android:buttonTint="@color/colorRetro"/>
+            android:layout_height="48dp"
+            android:checkedButton="@+id/mida1"
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/mida2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/num2"
-            android:textSize="20sp"
-            style="@style/estilLletra"
-            android:layout_marginStart="15dp"
-            android:buttonTint="@color/colorRetro"/>
+            <RadioButton
+                android:id="@+id/mida1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/num1"
+                android:textSize="18sp"
+                style="@style/estilLletra"
+                android:layout_marginStart="15dp"
+                android:buttonTint="@color/colorRetro"/>
 
-        <RadioButton
-            android:id="@+id/mida3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/num3"
-            android:textSize="20sp"
-            style="@style/estilLletra"
-            android:layout_marginStart="15dp"
-            android:buttonTint="@color/colorRetro"/>
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/mida2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/num2"
+                android:textSize="18sp"
+                style="@style/estilLletra"
+                android:layout_marginStart="15dp"
+                android:buttonTint="@color/colorRetro"/>
+
+            <RadioButton
+                android:id="@+id/mida3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/num3"
+                android:textSize="18sp"
+                style="@style/estilLletra"
+                android:layout_marginStart="15dp"
+                android:buttonTint="@color/colorRetro"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:text="@string/començar" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/Temps"
@@ -95,7 +109,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:text="@string/temps"
-        android:textSize="22sp" />
+        android:textSize="18sp" />
 
     <CheckBox
         android:id="@+id/time_checkBox"
@@ -105,36 +119,6 @@
         android:layout_marginStart="15dp"
         android:buttonTint="@color/colorRetro"
         android:drawableLeft="@drawable/ic_current_event_clock_big"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
-
-        <Button
-            android:id="@+id/start_button"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:text="@string/començar" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:gravity="center|bottom"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:id="@+id/eslogan_image2"
-            android:layout_width="match_parent"
-            android:layout_height="81dp"
-            android:src="@drawable/lema"
-            android:layout_gravity="bottom"/>
-
-    </LinearLayout>
 
 
 </LinearLayout>
