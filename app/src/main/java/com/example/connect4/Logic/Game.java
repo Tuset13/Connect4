@@ -1,8 +1,9 @@
 package com.example.connect4.Logic;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Game {
+public class Game implements Serializable {
 
     private final Board board;
     private final int connectToWin;
@@ -66,11 +67,7 @@ public class Game {
         long timePassed = (actualTime - this.startTime)/1000;//Mira el temps que ha passat en segons
 
         if (timePassed > this.gameTime) {
-            if (this.turn.isPlayer1()) {
-                this.status = Status.PLAYER2_WINS;
-            } else if (this.turn.isPlayer2()) {
-                this.status = Status.PLAYER1_WINS;
-            }
+            this.status = Status.TIMEOVER;
             this.hasWinner = true;
         }
     }

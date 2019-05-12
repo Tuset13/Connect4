@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-public class ImageAdapter extends BaseAdapter {
+import java.io.Serializable;
+
+public class ImageAdapter extends BaseAdapter implements Serializable {
     private Context context;
     private Integer[] myimages;
     private int num;

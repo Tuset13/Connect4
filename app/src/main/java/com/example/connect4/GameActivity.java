@@ -3,6 +3,7 @@ package com.example.connect4;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -12,6 +13,7 @@ import com.example.connect4.Logic.Game;
 import com.example.connect4.Logic.Position;
 import com.example.connect4.Logic.Status;
 
+import java.io.Serializable;
 import java.util.Date;
 
 public class GameActivity extends Activity implements AdapterView.OnItemClickListener {
@@ -34,12 +36,17 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         data.putInt("midakey", size);
         data.putString("aliaskey", intent.getStringExtra("aliaskey"));
 
-        game = new Game(size, 4);
+        if(savedInstanceState != null && (savedInstanceState.getSerializable("game") != null)){
+            game = (Game) savedInstanceState.getSerializable("game");
+            table = (ImageAdapter) savedInstanceState.getSerializable("table");
+        } else {
+            game = new Game(size, 4);
+            table = new ImageAdapter(this);
+            table.setGrid(size);
+        }
         text.setText(game.getGameTime() + " seconds");
         GridView gridView = findViewById(R.id.grid_view);
-        table = new ImageAdapter(this);
 
-        table.setGrid(size);
         gridView.setAdapter(table);
         gridView.setNumColumns(size);
         gridView.setOnItemClickListener(this);
@@ -64,8 +71,10 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
             Intent next = new Intent(GameActivity.this, ResultsActivity.class);
             if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
             if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
+            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
             next.putExtras(data);
             startActivity(next);
+            finish();
         } else {
 
             col = game.playOpponent();
@@ -80,12 +89,20 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
 
             if (game.checkForFinish()) {
                 Intent next = new Intent(GameActivity.this, ResultsActivity.class);
-                if (game.getStatus() == Status.PLAYER2_WINS)
-                    data.putString("statuskey", "HAS PERDUT");
+                if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
                 if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
+                if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
                 next.putExtras(data);
                 startActivity(next);
+                finish();
             }
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        state.putSerializable("game",  game);
+        state.putSerializable("table",table);
     }
 }
