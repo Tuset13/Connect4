@@ -13,30 +13,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/configuracio_cat" />
-
-    <TextView
-        android:id="@+id/Alias"
-        style="@style/estilLletra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/alias"
-        android:drawableLeft="@drawable/ic_blue_user"
-        />
-    <EditText
-        android:id="@+id/editTextAlias"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="13"
-        android:layout_marginStart="15dp"
-        android:hint="@string/aliasintro"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/colorRetro"
-        android:textColor="@color/colorRetro"
-        android:backgroundTint="@color/colorRetro"
-        />
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Alias"
+                style="@style/estilLletra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/alias"
+                android:drawableLeft="@drawable/ic_blue_user"
+                />
+
+            <EditText
+                android:id="@+id/editTextAlias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="13"
+                android:layout_marginStart="15dp"
+                android:hint="@string/aliasintro"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/colorRetro"
+                android:textColor="@color/colorRetro"
+                android:backgroundTint="@color/colorRetro"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="110dp">
+
+            <TextView
+                android:id="@+id/Temps"
+                style="@style/estilLletra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/temps"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/time_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginStart="15dp"
+                android:buttonTint="@color/colorRetro"
+                android:drawableLeft="@drawable/ic_current_event_clock_big"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/Graella"
@@ -100,25 +143,4 @@
             android:text="@string/començar" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/Temps"
-        style="@style/estilLletra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/temps"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/time_checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginStart="15dp"
-        android:buttonTint="@color/colorRetro"
-        android:drawableLeft="@drawable/ic_current_event_clock_big"/>
-
-
 </LinearLayout>
