@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:orientation="vertical"
+    tools:context=".ConfigActivity"
+    >
+
+    <ImageView
+        android:id="@+id/config_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/configuracio_cat" />
+
+    <TextView
+        android:id="@+id/Alias"
+        style="@style/estilLletra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/alias"
+        android:drawableLeft="@drawable/ic_blue_user"
+        />
+    <EditText
+        android:id="@+id/editTextAlias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="13"
+        android:layout_marginStart="15dp"
+        android:hint="@string/aliasintro"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorRetro"
+        android:textColor="@color/colorRetro"
+        android:backgroundTint="@color/colorRetro"
+        />
+
+    <TextView
+        android:id="@+id/Graella"
+        style="@style/estilLletra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/graella"
+        android:textSize="22sp"
+        android:drawableStart="@drawable/ic_matrix"/>
+
+    <RadioGroup
+        android:id="@+id/editGraella"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:checkedButton="@+id/mida1"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/mida1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/num1"
+            android:textSize="20sp"
+            style="@style/estilLletra"
+            android:layout_marginStart="15dp"
+            android:buttonTint="@color/colorRetro"/>
+
+        <RadioButton
+            android:id="@+id/mida2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/num2"
+            android:textSize="20sp"
+            style="@style/estilLletra"
+            android:layout_marginStart="15dp"
+            android:buttonTint="@color/colorRetro"/>
+
+        <RadioButton
+            android:id="@+id/mida3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/num3"
+            android:textSize="20sp"
+            style="@style/estilLletra"
+            android:layout_marginStart="15dp"
+            android:buttonTint="@color/colorRetro"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/Temps"
+        style="@style/estilLletra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/temps"
+        android:textSize="22sp" />
+
+    <CheckBox
+        android:id="@+id/time_checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginStart="15dp"
+        android:buttonTint="@color/colorRetro"
+        android:drawableLeft="@drawable/ic_current_event_clock_big"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/començar" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/eslogan_image2"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:src="@drawable/lema"
+            android:layout_gravity="bottom"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
