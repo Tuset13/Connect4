@@ -48,7 +48,7 @@ public class Board {
     public boolean canPlayCol(int col) {
         boolean canplay =false;
         int i = 0;
-        while( i <= this.size-1) {
+        while( i < this.size) {
             if (this.cells[i][col].isEmpty()){
                 canplay = true;
                 break;

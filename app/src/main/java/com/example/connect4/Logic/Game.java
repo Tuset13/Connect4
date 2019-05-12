@@ -82,7 +82,7 @@ public class Game {
     public Position drop(int col){
         boolean playableRow = this.board.canPlayCol(col);
 
-        if (playableRow != false) {
+        if (playableRow) {
             Position occupedPos = this.board.occupyCell(col, this.turn);
 
             if (this.board.maxConnected(occupedPos) >= this.connectToWin) {

@@ -28,12 +28,12 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         setContentView(R.layout.game);
 
         Intent intent = getIntent();
-        size = intent.getIntExtra("graellakey",-1);
-        time = intent.getBooleanExtra("tempskey",false);
-        data.putInt("midakey",size);
-        data.putString("aliaskey",intent.getStringExtra("aliaskey"));
+        size = intent.getIntExtra("graellakey", -1);
+        time = intent.getBooleanExtra("tempskey", false);
+        data.putInt("midakey", size);
+        data.putString("aliaskey", intent.getStringExtra("aliaskey"));
 
-        game = new Game(size,4);
+        game = new Game(size, 4);
         GridView gridView = findViewById(R.id.grid_view);
         table = new ImageAdapter(this);
 
@@ -52,35 +52,38 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
 
         table.setChip(R.drawable.redchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
-        if(time)
+        if (time)
             game.manageTime();
 
         Long temps = new Date().getTime();
-        text.setText(String.valueOf((temps-game.getStartTime())/1000)+ "seconds");
+        text.setText(String.valueOf((temps - game.getStartTime()) / 1000) + "seconds");
 
-        if(game.checkForFinish()) {
+        if (game.checkForFinish()) {
             Intent next = new Intent(GameActivity.this, ResultsActivity.class);
-            if(game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey","HAS GUANYAT");
-            if(game.getStatus() == Status.DRAW) data.putString("statuskey","HAS EMPATAT");
+            if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
+            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
             next.putExtras(data);
             startActivity(next);
-        }
-        col = game.playOpponent();
-        pos = game.drop(col);
+        } else {
 
-        //JUGARA LA MAQUINA
+            col = game.playOpponent();
+            pos = game.drop(col);
 
-        table.setChip(R.drawable.greenchip, pos.getRow(), pos.getColumn());
-        table.notifyDataSetChanged();
-        if(time)
-            game.manageTime();
+            //JUGARA LA MAQUINA
 
-        if(game.checkForFinish()) {
-            Intent next = new Intent(GameActivity.this, ResultsActivity.class);
-            if(game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey","HAS PERDUT");
-            if(game.getStatus() == Status.DRAW) data.putString("statuskey","HAS EMPATAT");
-            next.putExtras(data);
-            startActivity(next);
+            table.setChip(R.drawable.greenchip, pos.getRow(), pos.getColumn());
+            table.notifyDataSetChanged();
+            if (time)
+                game.manageTime();
+
+            if (game.checkForFinish()) {
+                Intent next = new Intent(GameActivity.this, ResultsActivity.class);
+                if (game.getStatus() == Status.PLAYER2_WINS)
+                    data.putString("statuskey", "HAS PERDUT");
+                if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
+                next.putExtras(data);
+                startActivity(next);
+            }
         }
     }
 }
