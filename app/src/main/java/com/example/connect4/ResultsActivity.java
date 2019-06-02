@@ -2,8 +2,10 @@ package com.example.connect4;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,8 +34,11 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
         EditText edtlog = findViewById(R.id.editText1);
         EditText edtMail = findViewById(R.id.editText2);
 
-        edtlog.setText(intent.getStringExtra("aliaskey")+" Mida Graella: ");
-        edtlog.append(String.valueOf(intent.getIntExtra("midakey",-1))+" "+intent.getStringExtra("statuskey"));
+        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String Alias =mySharedPreferences.getString(getString(R.string.Alias), "No name");
+        String Size = mySharedPreferences.getString(getString(R.string.Grill),"6");
+
+        edtlog.setText(Alias +" Mida Graella: " + Size + intent.getStringExtra("statuskey"));
         edthour.setText(new Date().toString());
         edtMail.requestFocus();
     }
@@ -54,7 +59,7 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
                 startActivity(in);
                 break;
             case R.id.newGame_button:
-                Intent intent1 = new Intent(ResultsActivity.this, ConfigActivity.class);
+                Intent intent1 = new Intent(ResultsActivity.this, GameActivity.class);
                 startActivity(intent1);
                 finish();
                 break;

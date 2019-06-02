@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import com.example.connect4.Preferences.PreferencesActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.start_button:
-                Intent intent1 = new Intent(MainActivity.this, ConfigActivity.class);
+                Intent intent1 = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(intent1);
                 finish();
                 break;

@@ -29,7 +29,7 @@
         <activity android:name=".GameActivity">
 
         </activity>
-        <activity android:name=".PreferencesActivity">
+        <activity android:name=".Preferences.PreferencesActivity">
 
         </activity>
     </application>

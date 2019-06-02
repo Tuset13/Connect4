@@ -7,12 +7,16 @@
         android:selectAllOnFocus="true"
         android:singleLine="true"
         android:title="@string/Alias"
-        android:summary="@string/Alias_info" />
+        android:summary="@string/Alias_info"
+        android:icon="@drawable/ic_blue_user"
+        />
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="@string/Time"
         android:title="@string/Time"
-        android:summary="@string/Time_info"/>
+        android:summary="@string/Time_info"
+        android:icon="@drawable/ic_current_event_clock_big"
+        />
     <ListPreference
         android:key="@string/Grill"
         android:title="@string/Grill"
@@ -20,6 +24,7 @@
         android:entries="@array/size_array"
         android:entryValues="@array/size_values_array"
         android:summary="@string/Grill_info"
+        android:icon="@drawable/ic_matrix"
         />
 
 </PreferenceScreen>
