@@ -47,17 +47,21 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         table.notifyDataSetChanged();
 
         timeControl();
-        sendingData(1);
+        if (game.checkForFinish()) {
+            sendingData(1);
+        } else {
 
-        //JUGARA LA MAQUINA
-        col = game.playOpponent();
-        pos = game.drop(col);
+            //JUGARA LA MAQUINA
+            col = game.playOpponent();
+            pos = game.drop(col);
 
-        table.setChip(R.drawable.greenchip, pos.getRow(), pos.getColumn());
-        table.notifyDataSetChanged();
+            table.setChip(R.drawable.greenchip, pos.getRow(), pos.getColumn());
+            table.notifyDataSetChanged();
 
-        timeControl();
-        sendingData(1);
+            timeControl();
+            if (game.checkForFinish())
+                sendingData(0);
+        }
     }
 
     @Override
@@ -89,26 +93,24 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
     }
 
     private void sendingData(int player){
-        if (game.checkForFinish()) {
-            if (player == 1){
-                Bundle data = new Bundle();
-                Intent next = new Intent(GameActivity.this, ResultsActivity.class);
-                if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
-                if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
-                if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
-                next.putExtras(data);
-                startActivity(next);
-                finish();
-            } else {
-                Bundle data = new Bundle();
-                Intent next = new Intent(GameActivity.this, ResultsActivity.class);
-                if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
-                if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
-                if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
-                next.putExtras(data);
-                startActivity(next);
-                finish();
-            }
+        if (player == 1){
+            Bundle data = new Bundle();
+            Intent next = new Intent(GameActivity.this, ResultsActivity.class);
+            if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
+            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
+            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            next.putExtras(data);
+            startActivity(next);
+            finish();
+        } else {
+            Bundle data = new Bundle();
+            Intent next = new Intent(GameActivity.this, ResultsActivity.class);
+            if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
+            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
+            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            next.putExtras(data);
+            startActivity(next);
+            finish();
         }
     }
 

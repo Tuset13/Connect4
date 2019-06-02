@@ -24,23 +24,31 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
         Button email = findViewById(R.id.email_button);
         Button newGame = findViewById(R.id.newGame_button);
         Button exit = findViewById(R.id.exit_button);
+        EditText edthour = findViewById(R.id.editText);
+        EditText edtlog = findViewById(R.id.editText1);
+        EditText edtMail = findViewById(R.id.editText2);
 
         email.setOnClickListener(this);
         newGame.setOnClickListener(this);
         exit.setOnClickListener(this);
 
         Intent intent = getIntent();
-        EditText edthour = findViewById(R.id.editText);
-        EditText edtlog = findViewById(R.id.editText1);
-        EditText edtMail = findViewById(R.id.editText2);
-
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String Alias =mySharedPreferences.getString(getString(R.string.Alias), "No name");
         String Size = mySharedPreferences.getString(getString(R.string.Grill),"6");
+        String Status = intent.getStringExtra("statuskey");
+        String Log = Logbuilder(Alias, Size, Status);
 
-        edtlog.setText(Alias +" Mida Graella: " + Size + intent.getStringExtra("statuskey"));
+        edtlog.setText(Log);
         edthour.setText(new Date().toString());
         edtMail.requestFocus();
+    }
+
+    private String Logbuilder(String alias, String size, String status) {
+
+        String result = alias + " Mida Greaella: "+ size + " | " + status;
+
+        return result;
     }
 
     @Override
