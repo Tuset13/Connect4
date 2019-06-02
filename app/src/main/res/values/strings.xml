@@ -26,7 +26,7 @@
     <string name="tempskey">tempskey</string>
 
     <!--STRINGS DE RESULTATS-->
-    <string name="horari">Dia i hora</string>
+    <string name="schedule">Dia i hora</string>
     <string name="logval">Valors del log</string>
     <string name="email">E-mail destinatari</string>
     <string name="sendemail">Enviar e-mail</string>

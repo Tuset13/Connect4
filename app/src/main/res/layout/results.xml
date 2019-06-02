@@ -22,7 +22,7 @@
         android:textSize="22sp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:text="@string/horari"
+        android:text="@string/schedule"
         />
 
     <EditText
