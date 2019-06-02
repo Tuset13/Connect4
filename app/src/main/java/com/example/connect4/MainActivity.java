@@ -1,40 +1,65 @@
 package com.example.connect4;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button ajuda = findViewById(R.id.ajuda_button);
-        Button config = findViewById(R.id.config_button);
-        Button sortir = findViewById(R.id.sortir_button);
+        Button help = findViewById(R.id.help_button);
+        Button start = findViewById(R.id.start_button);
+        Button exit = findViewById(R.id.exit_button);
 
-        sortir.setOnClickListener(this);
-        config.setOnClickListener(this);
-        ajuda.setOnClickListener(this);
+        exit.setOnClickListener(this);
+        start.setOnClickListener(this);
+        help.setOnClickListener(this);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.config:
+                startActivity(new Intent(this, PreferencesActivity.class));
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.ajuda_button:
+            case R.id.help_button:
                 Intent intent = new Intent(MainActivity.this, HelpActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.config_button:
+
+            case R.id.start_button:
                 Intent intent1 = new Intent(MainActivity.this, ConfigActivity.class);
                 startActivity(intent1);
                 finish();
                 break;
-            case R.id.sortir_button:
+
+            case R.id.exit_button:
                 finish();
                 break;
         }

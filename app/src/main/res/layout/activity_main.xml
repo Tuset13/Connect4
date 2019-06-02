@@ -18,24 +18,24 @@
         />
 
     <Button
-        android:id="@+id/ajuda_button"
+        android:id="@+id/help_button"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:text="@string/ajuda"
+        android:text="@string/help"
         android:drawableLeft="@drawable/ic_info"/>
 
     <Button
-        android:id="@+id/config_button"
+        android:id="@+id/start_button"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:text="@string/començar"
+        android:text="@string/start"
         android:drawableLeft="@drawable/ic_starticon"/>
 
     <Button
-        android:id="@+id/sortir_button"
+        android:id="@+id/exit_button"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:text="@string/sortir"
+        android:text="@string/exit"
         android:drawableLeft="@drawable/ic_exitimage"/>
 
 </LinearLayout>

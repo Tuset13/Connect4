@@ -1,9 +1,10 @@
 <resources>
     <!--STRINGS DE PANTALLA PRINCIPAL-->
     <string name="app_name">Connect4</string>
-    <string name="ajuda">Ajuda</string>
-    <string name="començar">Començar Partida</string>
-    <string name="sortir">Sortir</string>
+    <string name="help">Ajuda</string>
+    <string name="start">Començar Partida</string>
+    <string name="exit">Sortir</string>
+    <string name="config">Configuracio</string>
 
     <!--STRINGS DE AJUDA-->
     <string name="explicacio"> El joc consisteix en anar introduint fitxes en un tauler vertical amb l\'objectiu d\'alinear 4 consecutives del color assignat al jugador (roig) abans que el teu oponent.</string>
@@ -33,5 +34,11 @@
     <string name="sendingEmail">Preparant Correu</string>
     <string name="emailexemple">algu@email.com</string>
 
-
+    <!--PREFERENCE STRINGS-->
+    <string name="Alias">Alias</string>
+    <string name="Alias_info">Alias del jugador</string>
+    <string name="Time">Control del Temps</string>
+    <string name="Time_info">Marcar per a limitar el temps de la partida</string>
+    <string name="Grill">Mida Graella</string>
+    <string name="Grill_info">Mida de la graella del joc</string>
     </resources>

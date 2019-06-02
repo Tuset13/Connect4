@@ -141,7 +141,7 @@
                 android:id="@+id/exit_button"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:text="@string/sortir"
+                android:text="@string/exit"
                 android:drawableLeft="@drawable/ic_exitimage"/>
 
         </LinearLayout>
