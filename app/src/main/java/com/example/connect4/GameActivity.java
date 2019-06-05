@@ -30,7 +30,7 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         time = mySharedPreferences.getBoolean(getString(R.string.Time), false);
-        size = Integer.parseInt(mySharedPreferences.getString(getString(R.string.Grill),"6"));
+        size = Integer.parseInt(mySharedPreferences.getString(getString(R.string.Grill),"7"));
 
         manageGameTable(savedInstanceState);
     }
@@ -119,7 +119,10 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         if (time)
             game.manageTime();
 
-        Long temps = new Date().getTime();
-        text.setText(Math.abs(((temps - game.getStartTime()) / 1000) - game.getGameTime()) + " seconds");
+        Long time = ((new Date().getTime() - game.getStartTime()) / 1000) - game.getGameTime();
+        if(time>=0)
+            text.setText("0 seconds");
+        else
+            text.setText(Math.abs(time)  + " seconds");
     }
 }

@@ -63,7 +63,7 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
         newRegister.put("alias", alias);
         newRegister.put("grillSize", size);
         newRegister.put("timeControl", timeControl);
-        newRegister.put("usedTime", 10);
+        newRegister.put("usedTime", 10);//ARREGLAR AIXO
         newRegister.put("result", status);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat(
