@@ -20,10 +20,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button help = findViewById(R.id.help_button);
         Button start = findViewById(R.id.start_button);
         Button exit = findViewById(R.id.exit_button);
+        Button consult = findViewById(R.id.data_base_button);
 
         exit.setOnClickListener(this);
         start.setOnClickListener(this);
         help.setOnClickListener(this);
+        consult.setOnClickListener(this);
 
     }
 
@@ -58,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent1 = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(intent1);
                 finish();
+                break;
+
+            case R.id.data_base_button:
+                Intent intent2 = new Intent(MainActivity.this, HelpActivity.class);
+                startActivity(intent2);
                 break;
 
             case R.id.exit_button:

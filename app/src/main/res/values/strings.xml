@@ -5,6 +5,7 @@
     <string name="start">Començar Partida</string>
     <string name="exit">Sortir</string>
     <string name="config">Configuracio</string>
+    <string name="dataBase">Consultar Partides</string>
 
     <!--STRINGS DE AJUDA-->
     <string name="explicacio"> El joc consisteix en anar introduint fitxes en un tauler vertical amb l\'objectiu d\'alinear 4 consecutives del color assignat al jugador (roig) abans que el teu oponent.</string>

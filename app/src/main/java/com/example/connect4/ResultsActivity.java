@@ -16,7 +16,9 @@ import android.widget.Toast;
 
 import com.example.connect4.DDBB.PartidasSQLiteHelper;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class ResultsActivity extends Activity implements View.OnClickListener {
 
@@ -43,25 +45,30 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
         String Size = mySharedPreferences.getString(getString(R.string.Grill),"7");
         String Status = intent.getStringExtra("statuskey");
         String Log = Logbuilder(Alias, Size, Status);
-        Integer timeControl = mySharedPreferences.getInt(getString(R.string.Time),1);
+        Integer timeControl = mySharedPreferences.getInt(getString(R.string.Time),0);
+        Date date = new Date();
 
         edtlog.setText(Log);
-        edthour.setText(new Date().toString());
+        edthour.setText(date.toString());
         edtMail.requestFocus();
 
         PartidasSQLiteHelper usdbh = new PartidasSQLiteHelper(this, "DBPartidas",null, 1);
         SQLiteDatabase db = usdbh.getWritableDatabase();
         if(db != null)
-            instertinDB(db, Alias, Size, timeControl, Status);
+            instertinDB(db, Alias, Size, timeControl, Status, date);
     }
 
-    private void instertinDB(SQLiteDatabase db, String alias, String size, Integer timeControl, String status) {
+    private void instertinDB(SQLiteDatabase db, String alias, String size, Integer timeControl, String status, Date date) {
         ContentValues newRegister = new ContentValues();
         newRegister.put("alias", alias);
         newRegister.put("grillSize", size);
         newRegister.put("timeControl", timeControl);
         newRegister.put("usedTime", 10);
         newRegister.put("result", status);
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "yyyy-MM-dd HH:mm:ss", new Locale("es", "ES"));
+        newRegister.put("date", dateFormat.format(date));
         db.insert("Partidas", null, newRegister);
     }
 
