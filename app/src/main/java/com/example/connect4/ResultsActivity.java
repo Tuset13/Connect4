@@ -45,20 +45,20 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
         String Size = mySharedPreferences.getString(getString(R.string.Grill),"7");
         String Status = intent.getStringExtra("statuskey");
         String Log = Logbuilder(Alias, Size, Status);
-        Integer timeControl = mySharedPreferences.getInt(getString(R.string.Time),0);
+        boolean timeControl = mySharedPreferences.getBoolean(getString(R.string.Time),false);
         Date date = new Date();
 
         edtlog.setText(Log);
         edthour.setText(date.toString());
         edtMail.requestFocus();
 
-        PartidasSQLiteHelper usdbh = new PartidasSQLiteHelper(this, "DBPartidas",null, 1);
+        PartidasSQLiteHelper usdbh = new PartidasSQLiteHelper(this, "Partidas",null, 1);
         SQLiteDatabase db = usdbh.getWritableDatabase();
         if(db != null)
             instertinDB(db, Alias, Size, timeControl, Status, date);
     }
 
-    private void instertinDB(SQLiteDatabase db, String alias, String size, Integer timeControl, String status, Date date) {
+    private void instertinDB(SQLiteDatabase db, String alias, String size, boolean timeControl, String status, Date date) {
         ContentValues newRegister = new ContentValues();
         newRegister.put("alias", alias);
         newRegister.put("grillSize", size);
