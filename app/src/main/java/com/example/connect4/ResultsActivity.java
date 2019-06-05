@@ -41,7 +41,7 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
 
         Intent intent = getIntent();
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String Alias = mySharedPreferences.getString(getString(R.string.Alias), "No name");
+        String Alias = mySharedPreferences.getString(getString(R.string.Alias), "P1");
         String Size = mySharedPreferences.getString(getString(R.string.Grill),"7");
         String Status = intent.getStringExtra("statuskey");
         String Log = Logbuilder(Alias, Size, Status);
