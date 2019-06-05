@@ -32,6 +32,13 @@
         android:drawableLeft="@drawable/ic_starticon"/>
 
     <Button
+        android:id="@+id/data_base_button"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="@string/dataBase"
+        android:drawableLeft="@drawable/ic_open_book"/>
+
+    <Button
         android:id="@+id/exit_button"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
