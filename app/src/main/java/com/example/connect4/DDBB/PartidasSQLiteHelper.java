@@ -11,7 +11,7 @@ public class PartidasSQLiteHelper extends SQLiteOpenHelper {
                         "alias TEXT, " +
                         "date TEXT, " +
                         "grillSize TEXT, " +
-                        "timeControl INTEGER, " +
+                        "timeControl BOOLEAN, " +
                         "usedTime INTEGER, " +
                         "result TEXT)";
     public PartidasSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
