@@ -1,8 +1,11 @@
 package com.example.connect4;
 
 import android.app.Activity;
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.connect4.DDBB.PartidasSQLiteHelper;
 
 import java.util.Date;
 
@@ -34,14 +39,30 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
 
         Intent intent = getIntent();
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String Alias =mySharedPreferences.getString(getString(R.string.Alias), "No name");
-        String Size = mySharedPreferences.getString(getString(R.string.Grill),"6");
+        String Alias = mySharedPreferences.getString(getString(R.string.Alias), "No name");
+        String Size = mySharedPreferences.getString(getString(R.string.Grill),"7");
         String Status = intent.getStringExtra("statuskey");
         String Log = Logbuilder(Alias, Size, Status);
+        Integer timeControl = mySharedPreferences.getInt(getString(R.string.Time),1);
 
         edtlog.setText(Log);
         edthour.setText(new Date().toString());
         edtMail.requestFocus();
+
+        PartidasSQLiteHelper usdbh = new PartidasSQLiteHelper(this, "DBPartidas",null, 1);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+        if(db != null)
+            instertinDB(db, Alias, Size, timeControl, Status);
+    }
+
+    private void instertinDB(SQLiteDatabase db, String alias, String size, Integer timeControl, String status) {
+        ContentValues newRegister = new ContentValues();
+        newRegister.put("alias", alias);
+        newRegister.put("grillSize", size);
+        newRegister.put("timeControl", timeControl);
+        newRegister.put("usedTime", 10);
+        newRegister.put("result", status);
+        db.insert("Partidas", null, newRegister);
     }
 
     private String Logbuilder(String alias, String size, String status) {

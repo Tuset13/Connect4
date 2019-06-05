@@ -20,7 +20,7 @@
     <ListPreference
         android:key="@string/Grill"
         android:title="@string/Grill"
-        android:defaultValue="6"
+        android:defaultValue="7"
         android:entries="@array/size_array"
         android:entryValues="@array/size_values_array"
         android:summary="@string/Grill_info"
