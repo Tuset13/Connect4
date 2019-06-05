@@ -23,7 +23,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         style="@style/estilLletra"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:text="@string/explicacio" />
     <TextView
         android:id="@+id/explicacio1"
@@ -33,7 +33,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         style="@style/estilLletra"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:text="@string/explicacio1"
          />
     <TextView
@@ -44,7 +44,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         style="@style/estilLletra"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:text="@string/explicacio2"
          />
     <TextView
@@ -55,7 +55,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         style="@style/estilLletra"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_marginBottom="15dp"
         android:text="@string/explicacio3"
         />
