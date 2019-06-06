@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/colorBlack">
 
-</android.support.constraint.ConstraintLayout>
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        class="eps.udl.eps.fragments.ejmoreflexible.FragmentList"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/FrgListOld"
+        />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        class="eps.udl.eps.fragments.ejmoreflexible.FragmentDetail"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/FrgDetailOld"
+        />
+
+</LinearLayout>

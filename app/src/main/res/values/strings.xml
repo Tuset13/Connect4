@@ -42,4 +42,9 @@
     <string name="Time_info">Marcar per a limitar el temps de la partida</string>
     <string name="Grill">Mida Graella</string>
     <string name="Grill_info">Mida de la graella del joc</string>
+
+    <!--STRINGS DEL REGISTRE DE PARTIDES-->
+    <string name="goback">Tornar</string>
     </resources>
+
+
