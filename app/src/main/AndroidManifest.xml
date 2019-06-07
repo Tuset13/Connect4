@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.connect4">
+    package="com.example.connect4"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk tools:overrideLibrary="android.support.fragment"/>
 
     <application
         android:allowBackup="true"
@@ -26,7 +29,7 @@
         <activity android:name=".ResultsActivity">
 
         </activity>
-        <activity android:name=".GameActivity">
+        <activity android:name=".Game.GameActivity">
 
         </activity>
         <activity android:name=".Preferences.PreferencesActivity">

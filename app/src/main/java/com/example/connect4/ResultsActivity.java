@@ -1,7 +1,6 @@
 package com.example.connect4;
 
 import android.app.Activity;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,9 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.connect4.DDBB.PartidasSQLiteHelper;
-
+import com.example.connect4.Game.GameActivity;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;

@@ -1,38 +1,54 @@
-package com.example.connect4;
+package com.example.connect4.Game;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import com.example.connect4.ImageAdapter;
 import com.example.connect4.Logic.Game;
 import com.example.connect4.Logic.Position;
 import com.example.connect4.Logic.Status;
+import com.example.connect4.R;
+import com.example.connect4.ResultsActivity;
+
 import java.util.Date;
 
-public class GameActivity extends Activity implements AdapterView.OnItemClickListener {
+public class GridFrag extends Fragment implements AdapterView.OnItemClickListener {
 
     private ImageAdapter table;
     private Game game;
-
     private int size;
     private boolean time;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.game);
+    View view;
 
-        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.fragment_grid, container, false);
+
+        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(view.getContext());
 
         time = mySharedPreferences.getBoolean(getString(R.string.Time), false);
         size = Integer.parseInt(mySharedPreferences.getString(getString(R.string.Grill),"7"));
 
         manageGameTable(savedInstanceState);
+
+        return view;
+
     }
 
     @Override
@@ -63,13 +79,6 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         }
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle state) {
-        super.onSaveInstanceState(state);
-        state.putSerializable("game",  game);
-        state.putSerializable("table",table);
-    }
-
     private void manageGameTable(Bundle savedInstanceState){
 
         if(savedInstanceState != null && (savedInstanceState.getSerializable("game") != null)){
@@ -77,12 +86,12 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
             table = (ImageAdapter) savedInstanceState.getSerializable("table");
         } else {
             game = new Game(size, 4);
-            table = new ImageAdapter(this);
+            table = new ImageAdapter(getContext());
             table.setGrid(size);
         }
 
-        TextView text = findViewById(R.id.clock);
-        GridView gridView = findViewById(R.id.grid_view);
+        TextView text = view.findViewById(R.id.clock);
+        GridView gridView = view.findViewById(R.id.grid_view);
 
         text.setText(game.getGameTime() + " seconds");
 
@@ -91,30 +100,9 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(this);
     }
 
-    private void sendingData(int player){
-        if (player == 1){
-            Bundle data = new Bundle();
-            Intent next = new Intent(GameActivity.this, ResultsActivity.class);
-            if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
-            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
-            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
-            next.putExtras(data);
-            startActivity(next);
-            finish();
-        } else {
-            Bundle data = new Bundle();
-            Intent next = new Intent(GameActivity.this, ResultsActivity.class);
-            if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
-            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
-            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
-            next.putExtras(data);
-            startActivity(next);
-            finish();
-        }
-    }
 
     private void timeControl(){
-        TextView text = findViewById(R.id.clock);
+        TextView text = view.findViewById(R.id.clock);
 
         if (time)
             game.manageTime();
@@ -124,5 +112,26 @@ public class GameActivity extends Activity implements AdapterView.OnItemClickLis
             text.setText("0 seconds");
         else
             text.setText(Math.abs(time)  + " seconds");
+    }
+
+
+    private void sendingData(int player){
+        if (player == 1){
+            Bundle data = new Bundle();
+            Intent next = new Intent(getActivity(), ResultsActivity.class);
+            if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
+            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
+            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            next.putExtras(data);
+            startActivity(next);
+        } else {
+            Bundle data = new Bundle();
+            Intent next = new Intent(getActivity(), ResultsActivity.class);
+            if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
+            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
+            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            next.putExtras(data);
+            startActivity(next);
+        }
     }
 }
