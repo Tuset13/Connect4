@@ -29,10 +29,5 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.game);
     }
 
-    /*@Override
-    public void onSaveInstanceState(Bundle state) {
-        super.onSaveInstanceState(state);
-        state.putSerializable("game",  game);
-        state.putSerializable("table",table);
-    }*/
+
 }
