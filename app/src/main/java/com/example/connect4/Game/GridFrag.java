@@ -90,10 +90,8 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             table.setGrid(size);
         }
 
-        TextView text = view.findViewById(R.id.clock);
         GridView gridView = view.findViewById(R.id.grid_view);
-
-        text.setText(game.getGameTime() + " seconds");
+        timeControl();
 
         gridView.setAdapter(table);
         gridView.setNumColumns(size);
@@ -119,19 +117,27 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
         if (player == 1){
             Bundle data = new Bundle();
             Intent next = new Intent( getActivity(), ResultsActivity.class);
+            int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
+
             if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
             if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
             if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            data.putInt("usedTime", time);
             next.putExtras(data);
+
             startActivity(next);
             getActivity().finish();
         } else {
             Bundle data = new Bundle();
             Intent next = new Intent( getActivity(), ResultsActivity.class);
+            int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
+
             if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
             if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
             if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            data.putInt("usedTime", time);
             next.putExtras(data);
+
             startActivity(next);
             getActivity().finish();
         }
