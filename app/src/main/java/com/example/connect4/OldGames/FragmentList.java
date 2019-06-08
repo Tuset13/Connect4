@@ -1,4 +1,6 @@
 package com.example.connect4.OldGames;
 
-public class FragmentList {
+import android.support.v4.app.Fragment;
+
+public class FragmentList extends Fragment {
 }
