@@ -2,6 +2,7 @@ package com.example.connect4.Game;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -29,6 +30,15 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
     private boolean time;
 
     View view;
+    OnPositionSelectedListener mylistener;
+
+    public interface OnPositionSelectedListener {
+        public void onPositionSelected(Uri positionuri);
+    }
+
+    public void setOnPositionSelected(OnPositionSelectedListener listener){
+        this.mylistener = listener;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
