@@ -12,9 +12,9 @@ public class HelpActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
-        Button tornar = findViewById(R.id.Tornar);
+        Button back = findViewById(R.id.Tornar);
 
-        tornar.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

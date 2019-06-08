@@ -76,9 +76,7 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
 
     private String Logbuilder(String alias, String size, String status, int usedtime) {
 
-        String result = alias + " | Mida Greaella: "+ size + " | Temps total: "+ usedtime+"s | " + status;
-
-        return result;
+        return alias + " | Mida Greaella: "+ size + " | Temps total: "+ usedtime+"s | " + status;
     }
 
     @Override

@@ -8,23 +8,11 @@
     <string name="dataBase">Consultar Partides</string>
 
     <!--STRINGS DE AJUDA-->
-    <string name="explicacio"> El joc consisteix en anar introduint fitxes en un tauler vertical amb l\'objectiu d\'alinear 4 consecutives del color assignat al jugador (roig) abans que el teu oponent.</string>
-    <string name="explicacio1"> A cada torn, el jugador introdueix una fitxa a la columna triada(sempre i quan no estigui completa), i aquesta cau a la posició més baixa possible.</string>
-    <string name="explicacio2"> Guanya la partida el jugador que primer aconsegueix alinear 4 fitxes consecutives del seu color en horitzonal, vertical o diagonal.</string>
-    <string name="explicacio3"> Si totes les columnes estan plenes i ningú ha aconseguit alinear-ne 4 fitxes, hi ha empat.</string>
-    <string name="tornar">Tornar al Menu</string>
-
-    <!--STRINGS DE CONFIGURACIO INICIAL-->
-    <string name="alias">Alias Identificatiu</string>
-    <string name="aliasintro">Introduir Alias</string>
-    <string name="graella">Mida Graella</string>
-    <string name="num1">7</string>
-    <string name="num2">6</string>
-    <string name="num3">5</string>
-    <string name="temps">Control de Temps</string>
-    <string name="aliaskey">aliaskey</string>
-    <string name="graellakey">graellakey</string>
-    <string name="tempskey">tempskey</string>
+    <string name="explanation"> El joc consisteix en anar introduint fitxes en un tauler vertical amb l\'objectiu d\'alinear 4 consecutives del color assignat al jugador (roig) abans que el teu oponent.</string>
+    <string name="explanation1"> A cada torn, el jugador introdueix una fitxa a la columna triada(sempre i quan no estigui completa), i aquesta cau a la posició més baixa possible.</string>
+    <string name="explanation2"> Guanya la partida el jugador que primer aconsegueix alinear 4 fitxes consecutives del seu color en horitzonal, vertical o diagonal.</string>
+    <string name="explanation3"> Si totes les columnes estan plenes i ningú ha aconseguit alinear-ne 4 fitxes, hi ha empat.</string>
+    <string name="back">Tornar al Menu</string>
 
     <!--STRINGS DE RESULTATS-->
     <string name="schedule">Dia i hora</string>
