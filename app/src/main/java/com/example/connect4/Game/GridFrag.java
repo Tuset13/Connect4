@@ -147,6 +147,6 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
     public void onSaveInstanceState(Bundle state) {
         super.onSaveInstanceState(state);
         state.putSerializable("game",  game);
-        state.putSerializable("table",table);
+        state.putSerializable("table", table);
     }
 }
