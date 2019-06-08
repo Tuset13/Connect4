@@ -50,6 +50,7 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
         edthour.setText(date.toString());
         edtMail.requestFocus();
 
+        //BASE DE DADES
         PartidasSQLiteHelper usdbh = new PartidasSQLiteHelper(this, "Partidas",null, 1);
         SQLiteDatabase db = usdbh.getWritableDatabase();
         if(db != null)
@@ -58,15 +59,15 @@ public class ResultsActivity extends Activity implements View.OnClickListener {
 
     private void instertinDB(SQLiteDatabase db, String alias, String size, boolean timeControl, String status, Date date) {
         ContentValues newRegister = new ContentValues();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("es", "ES"));
+
         newRegister.put("alias", alias);
         newRegister.put("grillSize", size);
         newRegister.put("timeControl", timeControl);
         newRegister.put("usedTime", 10);//ARREGLAR AIXO
         newRegister.put("result", status);
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyy-MM-dd HH:mm:ss", new Locale("es", "ES"));
         newRegister.put("date", dateFormat.format(date));
+
         db.insert("Partidas", null, newRegister);
     }
 

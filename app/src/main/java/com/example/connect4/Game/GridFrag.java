@@ -118,20 +118,22 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
     private void sendingData(int player){
         if (player == 1){
             Bundle data = new Bundle();
-            Intent next = new Intent(getActivity(), ResultsActivity.class);
+            Intent next = new Intent( getActivity(), ResultsActivity.class);
             if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
             if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
             if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
             next.putExtras(data);
             startActivity(next);
+            getActivity().finish();
         } else {
             Bundle data = new Bundle();
-            Intent next = new Intent(getActivity(), ResultsActivity.class);
+            Intent next = new Intent( getActivity(), ResultsActivity.class);
             if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
             if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
             if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
             next.putExtras(data);
             startActivity(next);
+            getActivity().finish();
         }
     }
 
