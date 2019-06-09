@@ -76,7 +76,7 @@ public class LogFrag extends Fragment {
 
         String Text1 = ("Casella Ocupada:    (" + (pos.getColumn() + 1) +", "+ (pos.getRow() + 1) + ") \n" );
 
-        Item item = new Item(Text1,"PROVA");
+        Item item = new Item(Text1,"PROVA MES LLARGA NO TINC NIDEA QUE FICAR");
         items.add(item);
         adapter.notifyDataSetChanged();
 

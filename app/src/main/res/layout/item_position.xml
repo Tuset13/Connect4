@@ -13,16 +13,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/estilLletra"
-        android:textSize="16sp"
+        android:textSize="14sp"
         />
 
     <TextView
         android:id="@+id/TempsOcu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         style="@style/estilLletra"
-        android:textSize="16sp"
+        android:textSize="14sp"
         />
 
 </LinearLayout>
