@@ -61,8 +61,10 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         //BASE DE DADES
         PartidasSQLiteHelper usdbh = new PartidasSQLiteHelper(this, "Partidas",null, 1);
         SQLiteDatabase db = usdbh.getWritableDatabase();
-        if(db != null)
-           instertinDB(db, Alias, Size, timeControl, Status, date, usedTime);
+        if(db != null){
+            instertinDB(db, Alias, Size, timeControl, Status, date, usedTime);
+        }
+        db.close();
     }
 
     @Override
