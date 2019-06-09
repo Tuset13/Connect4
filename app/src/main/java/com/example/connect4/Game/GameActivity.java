@@ -25,11 +25,11 @@ public class GameActivity extends AppCompatActivity implements GridFrag.OnPositi
 
 
     @Override
-    public void onPositionSelected(Position pos, Date start, Date end) {
+    public void onPositionSelected(Position pos, Date start, Date end, Long timerest, boolean time) {
         LogFrag log = (LogFrag) getSupportFragmentManager().findFragmentById(R.id.log);
         boolean logexists = (log != null && log.isInLayout());
 
         if(logexists)
-            log.showPosition(pos, start, end);
+            log.showPosition(pos, start, end, timerest, time);
     }
 }

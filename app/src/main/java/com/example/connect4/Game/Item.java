@@ -4,9 +4,17 @@ public class Item {
 
     private String title;
     private String description;
+    private String temps;
 
     public Item() {
         super();
+    }
+
+    public Item(String title, String description, String temps) {
+        super();
+        this.title = title;
+        this.description = description;
+        this.temps = temps;
     }
 
     public Item(String title, String description) {
@@ -29,6 +37,14 @@ public class Item {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getTemps() {
+        return temps;
+    }
+
+    public void setTemps(String tempsdescription) {
+        this.temps = temps;
     }
 
 }
