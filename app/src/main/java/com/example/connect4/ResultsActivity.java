@@ -56,7 +56,6 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
 
         edtlog.setText(Log);
         edthour.setText(date.toString());
-        edtMail.requestFocus();
 
         //BASE DE DADES
         PartidasSQLiteHelper usdbh = new PartidasSQLiteHelper(this, "Partidas",null, 1);
@@ -99,7 +98,6 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         newRegister.put("result", status);//Afegim Status
 
         db.insert("Partidas", null, newRegister);
-        Toast.makeText(this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
     }
 
     private String Logbuilder(String alias, String size, String status, int usedtime) {
@@ -123,11 +121,13 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(in);
                 break;
             case R.id.newGame_button:
+                Toast.makeText(this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(ResultsActivity.this, GameActivity.class);
                 startActivity(intent1);
                 finish();
                 break;
             case R.id.exit_button:
+                Toast.makeText(this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
                 finish();
                 break;
         }

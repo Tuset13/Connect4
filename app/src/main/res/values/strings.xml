@@ -22,7 +22,6 @@
     <string name="newGame">Nova Partida</string>
     <string name="sendingEmail">Preparant Correu</string>
     <string name="emailexemple">algu@email.com</string>
-    <string name="toast1">Partida guardada amb exit</string>
 
     <!--PREFERENCE STRINGS-->
     <string name="Alias">Alias</string>
@@ -36,6 +35,12 @@
     <string name="goback">Tornar</string>
     <string name="id_key">idkey</string>
 
+    <!--STRINGS DE TOASTS-->
+    <string name="toast1">Partida guardada amb exit</string>
+    <string name="toastwin">HAS GUANYAT</string>
+    <string name="toastlost">HAS PERDUT</string>
+    <string name="toastdraw">HAS EMPATAT</string>
+    <string name="toasttime">S\'HA ESGOTAT EL TEMPS</string>
 
 </resources>
 

@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.connect4.ImageAdapter;
 import com.example.connect4.Logic.Game;
 import com.example.connect4.Logic.Position;
@@ -141,9 +143,18 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             Intent next = new Intent( getActivity(), ResultsActivity.class);
             int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
 
-            if (game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "HAS GUANYAT");
-            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
-            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            if (game.getStatus() == Status.PLAYER1_WINS) {
+                data.putString("statuskey", "HAS GUANYAT");
+                Toast.makeText(view.getContext(), getString(R.string.toastwin), Toast.LENGTH_LONG).show();
+            }
+            if (game.getStatus() == Status.DRAW) {
+                data.putString("statuskey", "HAS EMPATAT");
+                Toast.makeText(view.getContext(), getString(R.string.toastdraw), Toast.LENGTH_LONG).show();
+            }
+            if (game.getStatus() == Status.TIMEOVER) {
+                data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+                Toast.makeText(view.getContext(), getString(R.string.toasttime), Toast.LENGTH_LONG).show();
+            }
             data.putInt("usedTime", time);
             next.putExtras(data);
 
@@ -154,9 +165,18 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             Intent next = new Intent( getActivity(), ResultsActivity.class);
             int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
 
-            if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
-            if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
-            if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            if (game.getStatus() == Status.PLAYER2_WINS){
+                data.putString("statuskey", "HAS PERDUT");
+                Toast.makeText(view.getContext(), getString(R.string.toastlost), Toast.LENGTH_SHORT).show();
+            }
+            if (game.getStatus() == Status.DRAW){
+                data.putString("statuskey", "HAS EMPATAT");
+                Toast.makeText(view.getContext(), getString(R.string.toastdraw), Toast.LENGTH_SHORT).show();
+            }
+            if (game.getStatus() == Status.TIMEOVER){
+                data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+                Toast.makeText(view.getContext(), getString(R.string.toasttime), Toast.LENGTH_SHORT).show();
+            }
             data.putInt("usedTime", time);
             next.putExtras(data);
 
