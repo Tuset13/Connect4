@@ -23,6 +23,9 @@
         <activity android:name=".OldGames.OldGamesActivity">
 
         </activity>
+        <activity android:name=".OldGames.DetailActivity">
+
+        </activity>
         <activity android:name=".HelpActivity">
 
         </activity>
