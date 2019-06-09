@@ -13,7 +13,10 @@ import android.widget.TextView;
 import com.example.connect4.Logic.Game;
 import com.example.connect4.Logic.Position;
 import com.example.connect4.R;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class LogFrag extends Fragment {
 
@@ -72,11 +75,13 @@ public class LogFrag extends Fragment {
     }
 
 
-    public void showPosition(Position pos){
+    public void showPosition(Position pos, Date start, Date end){
 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         String Text1 = ("Casella Ocupada:    (" + (pos.getColumn() + 1) +", "+ (pos.getRow() + 1) + ") \n" );
+        String Text2 = ("Temps inici: "+dateFormat.format(start)+";Temps final: "+dateFormat.format(end));
 
-        Item item = new Item(Text1,"PROVA MES LLARGA NO TINC NIDEA QUE FICAR");
+        Item item = new Item(Text1,Text2);
         items.add(item);
         adapter.notifyDataSetChanged();
 

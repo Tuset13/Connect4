@@ -20,6 +20,7 @@ import com.example.connect4.Logic.Status;
 import com.example.connect4.R;
 import com.example.connect4.ResultsActivity;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class GridFrag extends Fragment implements AdapterView.OnItemClickListener {
@@ -28,12 +29,14 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
     private Game game;
     private int size;
     private boolean time;
+    Date start = new Date();
+    Date end;
 
     View view;
     OnPositionSelectedListener mylistener;
 
     public interface OnPositionSelectedListener {
-        void onPositionSelected(Position pos);
+        void onPositionSelected(Position pos, Date start, Date end);
     }
 
     public void setOnPositionListener(OnPositionSelectedListener listener){
@@ -68,17 +71,18 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
         int col = position % size;
         Position pos = game.drop(col);
 
-        if(mylistener!=null)
-            mylistener.onPositionSelected(pos);
-
         table.setChip(R.drawable.redchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
+
+        end = new Date();
+        if(mylistener!=null)
+            mylistener.onPositionSelected(pos, start, end);
 
         timeControl();
         if (game.checkForFinish()) {
             sendingData(1);
         } else {
-
+            start = new Date();
             //JUGARA LA MAQUINA
             col = game.playOpponent();
             pos = game.drop(col);
@@ -86,10 +90,15 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             table.setChip(R.drawable.greenchip, pos.getRow(), pos.getColumn());
             table.notifyDataSetChanged();
 
+            end = new Date();
+            if(mylistener!=null)
+                mylistener.onPositionSelected(pos, start, end);
+
             timeControl();
             if (game.checkForFinish())
                 sendingData(0);
         }
+        start = new Date();
     }
 
     private void manageGameTable(Bundle savedInstanceState){
