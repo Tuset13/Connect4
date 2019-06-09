@@ -9,6 +9,7 @@
         android:title="@string/Alias"
         android:summary="@string/Alias_info"
         android:icon="@drawable/ic_blue_user"
+        android:maxLength="15"
         />
     <CheckBoxPreference
         android:defaultValue="false"
