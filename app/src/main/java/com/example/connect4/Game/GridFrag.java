@@ -1,5 +1,6 @@
 package com.example.connect4.Game;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -33,10 +34,10 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
     OnPositionSelectedListener mylistener;
 
     public interface OnPositionSelectedListener {
-        public void onPositionSelected(Uri positionuri);
+        void onPositionSelected(Position pos);
     }
 
-    public void setOnPositionSelected(OnPositionSelectedListener listener){
+    public void setOnPositionListener(OnPositionSelectedListener listener){
         this.mylistener = listener;
     }
 
@@ -67,6 +68,9 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
         //JUGA EL JUGADOR
         int col = position % size;
         Position pos = game.drop(col);
+
+        if(mylistener!=null)
+            mylistener.onPositionSelected(pos);
 
         table.setChip(R.drawable.redchip, pos.getRow(), pos.getColumn());
         table.notifyDataSetChanged();
@@ -158,5 +162,15 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
         super.onSaveInstanceState(state);
         state.putSerializable("game",  game);
         state.putSerializable("table", table);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try{
+            mylistener = (OnPositionSelectedListener) context;
+        } catch (ClassCastException e){
+            throw new ClassCastException(context.toString() + " must implement OnPositionSelectedListener");
+        }
     }
 }

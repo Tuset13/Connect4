@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.connect4.Logic.Position;
 import com.example.connect4.R;
 
 public class LogFrag extends Fragment {
@@ -45,6 +46,13 @@ public class LogFrag extends Fragment {
         }else{
             log.append("Sense Control de Temps");
         }
+    }
+
+    public void showPosition(Position pos){
+
+        TextView log = view.findViewById(R.id.loger);
+        log.append("\n" + "FUNCIONA BE");
+
     }
 
 }
