@@ -22,6 +22,7 @@
     <string name="newGame">Nova Partida</string>
     <string name="sendingEmail">Preparant Correu</string>
     <string name="emailexemple">algu@email.com</string>
+    <string name="toast1">Partida guardada amb exit</string>
 
     <!--PREFERENCE STRINGS-->
     <string name="Alias">Alias</string>

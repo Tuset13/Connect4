@@ -2,12 +2,12 @@ package com.example.connect4.OldGames;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 
 
 import com.example.connect4.R;
 
-public class OldGamesActivity extends FragmentActivity implements FragmentList.PartidaListener {
+public class OldGamesActivity extends AppCompatActivity implements FragmentList.PartidaListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class OldGamesActivity extends FragmentActivity implements FragmentList.P
             Intent i = new Intent(this, DetailActivity.class);
             i.putExtra(getString(R.string.id_key), id);
             startActivity(i);
+            finish();
         }
     }
 }

@@ -42,7 +42,7 @@ public class FragmentDetail extends Fragment {
         String[] campos = new String[]{"_id", "alias", "date", "grillSize", "timeControl", "usedTime", "result"};
         Cursor c = db.query(
                 "Partidas", campos, "_id=?", gameId, null,null,null);
-
+        c.moveToFirst();
         String gameInfo = c.getString(1) + "\n" + c.getString(2) + "\n" + c.getString(3) + "\n" +
                 c.getString(4) + "\n" + c.getString(5) + "\n" + c.getString(6);
 

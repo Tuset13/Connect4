@@ -1,11 +1,11 @@
 package com.example.connect4.OldGames;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.connect4.R;
 
-public class DetailActivity extends FragmentActivity {
+public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

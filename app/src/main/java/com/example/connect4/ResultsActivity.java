@@ -99,6 +99,7 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         newRegister.put("result", status);//Afegim Status
 
         db.insert("Partidas", null, newRegister);
+        Toast.makeText(this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
     }
 
     private String Logbuilder(String alias, String size, String status, int usedtime) {
