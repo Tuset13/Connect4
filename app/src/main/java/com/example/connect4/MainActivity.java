@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import com.example.connect4.Game.GameActivity;
+import com.example.connect4.OldGames.OldGamesActivity;
 import com.example.connect4.Preferences.PreferencesActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.data_base_button:
-                Intent intent2 = new Intent(MainActivity.this, HelpActivity.class);
+                Intent intent2 = new Intent(MainActivity.this, OldGamesActivity.class);
                 startActivity(intent2);
                 break;
 

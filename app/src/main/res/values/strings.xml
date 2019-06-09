@@ -33,6 +33,8 @@
 
     <!--STRINGS DEL REGISTRE DE PARTIDES-->
     <string name="goback">Tornar</string>
+    <string name="id_key">idkey</string>
+
 
 </resources>
 

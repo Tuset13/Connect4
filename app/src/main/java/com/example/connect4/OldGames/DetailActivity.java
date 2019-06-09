@@ -15,7 +15,6 @@ public class DetailActivity extends FragmentActivity {
         FragmentDetail detail = (FragmentDetail)getSupportFragmentManager()
                 .findFragmentById(R.id.FrgListOld);
 
-        //TODO
-        //Realitzar funcio de FragmentDetail
+        detail.showGame(getIntent().getStringExtra(getString(R.string.id_key)));
     }
 }
