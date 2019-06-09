@@ -15,6 +15,7 @@ public class OldGamesActivity extends AppCompatActivity implements FragmentList.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_old_games);
+        getSupportActionBar().hide();
 
         FragmentList frgList = (FragmentList) getSupportFragmentManager()
                 .findFragmentById(R.id.FrgListOld);
