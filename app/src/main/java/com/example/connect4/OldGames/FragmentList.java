@@ -4,18 +4,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v4.app.ListFragment;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.example.connect4.DDBB.PartidasSQLiteHelper;
 import com.example.connect4.R;
 
-public class FragmentList extends Fragment {
+public class FragmentList extends ListFragment {
 
     private PartidaListener listener;
 
@@ -30,13 +27,6 @@ public class FragmentList extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.fragment_list_old_games,container,false);
-        return view;
     }
 
     @Override
@@ -57,19 +47,15 @@ public class FragmentList extends Fragment {
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                 getContext(), R.layout.fragment_game_data, c, from, to, 0);
 
-        final ListView lstListado = getView().findViewById(R.id.FrgList);
+        this.setListAdapter(adapter);
+    }
 
-        lstListado.setAdapter(adapter);
-
-        lstListado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(listener!=null){
-                    listener.onPartidaSeleccionada(
-                            (String) lstListado.getAdapter().getItem(0));
-                }
-            }
-        });
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id){
+        if(listener!=null){
+            String stringId = String.valueOf(id);
+            listener.onPartidaSeleccionada(stringId);
+        }
     }
 
     @Override

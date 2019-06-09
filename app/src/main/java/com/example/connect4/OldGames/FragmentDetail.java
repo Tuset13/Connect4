@@ -32,7 +32,7 @@ public class FragmentDetail extends Fragment {
     }
 
     public void showGame(String id){
-        TextView view = (TextView) getView().findViewById(R.id.gameInfo);
+        TextView view = getView().findViewById(R.id.gameInfo);
         String[] gameId = new String[]{id};
 
         PartidasSQLiteHelper usdbh = new PartidasSQLiteHelper(
