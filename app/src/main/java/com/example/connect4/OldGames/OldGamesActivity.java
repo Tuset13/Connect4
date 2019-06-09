@@ -3,11 +3,13 @@ package com.example.connect4.OldGames;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
 
 import com.example.connect4.R;
 
-public class OldGamesActivity extends AppCompatActivity implements FragmentList.PartidaListener {
+public class OldGamesActivity extends AppCompatActivity implements FragmentList.PartidaListener, View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,10 @@ public class OldGamesActivity extends AppCompatActivity implements FragmentList.
         FragmentList frgList = (FragmentList) getSupportFragmentManager()
                 .findFragmentById(R.id.FrgListOld);
         frgList.setPartidaListener(this);
+
+        Button exit = findViewById(R.id.TornarMenu);
+
+        exit.setOnClickListener(this);
     }
 
     @Override
@@ -32,7 +38,15 @@ public class OldGamesActivity extends AppCompatActivity implements FragmentList.
             Intent i = new Intent(this, DetailActivity.class);
             i.putExtra(getString(R.string.id_key), id);
             startActivity(i);
-            finish();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.TornarMenu:
+                finish();
+                break;
         }
     }
 }

@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorBlack">
+    android:background="@color/colorBlack"
+    android:gravity="center"
+    >
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         class="com.example.connect4.OldGames.FragmentList"
@@ -23,5 +25,13 @@
         tools:layout="@layout/fragment_detail_old_games"
         android:layout_weight="1"
         />
+
+    <Button
+        android:id="@+id/TornarMenu"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_go_back_arrow"
+        android:text="@string/back"
+        android:layout_margin="20dp"/>
 
 </LinearLayout>
