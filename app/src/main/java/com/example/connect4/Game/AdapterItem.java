@@ -55,6 +55,9 @@ public class AdapterItem extends BaseAdapter implements Serializable {
         TextView description =  v.findViewById(R.id.TempsOcu);
         description.setText(dir.getDescription());
 
+        TextView time =  v.findViewById(R.id.Tempsrestant);
+        time.setText(dir.getTemps());
+
         return v;
     }
 }

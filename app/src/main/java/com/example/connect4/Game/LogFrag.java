@@ -75,14 +75,21 @@ public class LogFrag extends Fragment {
     }
 
 
-    public void showPosition(Position pos, Date start, Date end){
+    public void showPosition(Position pos, Date start, Date end, Long timerest, boolean time){
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         String Text1 = ("Casella Ocupada:    (" + (pos.getColumn() + 1) +", "+ (pos.getRow() + 1) + ") \n" );
         String Text2 = ("Temps inici: "+dateFormat.format(start)+";Temps final: "+dateFormat.format(end));
 
-        Item item = new Item(Text1,Text2);
-        items.add(item);
+        if(time){
+            String Text3 = "Temps restant: " + timerest.toString() + "secs";
+            Item item = new Item(Text1,Text2,Text3);
+            items.add(item);
+        }else{
+            Item item = new Item(Text1,Text2);
+            items.add(item);
+        }
+
         adapter.notifyDataSetChanged();
 
     }

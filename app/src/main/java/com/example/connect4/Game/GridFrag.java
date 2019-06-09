@@ -38,7 +38,7 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
     OnPositionSelectedListener mylistener;
 
     public interface OnPositionSelectedListener {
-        void onPositionSelected(Position pos, Date start, Date end);
+        void onPositionSelected(Position pos, Date start, Date end, Long Time, boolean time);
     }
 
     public void setOnPositionListener(OnPositionSelectedListener listener){
@@ -77,8 +77,9 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
         table.notifyDataSetChanged();
 
         end = new Date();
+        Long timerest = ((new Date().getTime() - game.getStartTime()) / 1000) - game.getGameTime();
         if(mylistener!=null)
-            mylistener.onPositionSelected(pos, start, end);
+            mylistener.onPositionSelected(pos, start, end, Math.abs(timerest), time);
 
         timeControl();
         if (game.checkForFinish()) {
@@ -93,8 +94,9 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             table.notifyDataSetChanged();
 
             end = new Date();
+            timerest = ((new Date().getTime() - game.getStartTime()) / 1000) - game.getGameTime();
             if(mylistener!=null)
-                mylistener.onPositionSelected(pos, start, end);
+                mylistener.onPositionSelected(pos, start, end, Math.abs(timerest), time);
 
             timeControl();
             if (game.checkForFinish())
