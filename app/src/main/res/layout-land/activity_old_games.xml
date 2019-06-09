@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    class="com.example.connect4.OldGames.FragmentList"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:id="@+id/FrgListOld"
-    tools:layout="@layout/fragment_list_old_games" />
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlack">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        class="com.example.connect4.OldGames.FragmentList"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/FrgListOld"
+        tools:layout="@layout/fragment_list_old_games" />
+
+</LinearLayout>
