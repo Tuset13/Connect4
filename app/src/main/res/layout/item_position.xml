@@ -9,18 +9,20 @@
     android:background="@color/colorBlack">
 
     <TextView
-        android:id="@+id/loger"
+        android:id="@+id/Casella"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/estilLletra"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
         android:textSize="16sp"
         />
 
-    <ListView
-        android:id="@+id/milista"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/TempsOcu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/estilLletra"
+        android:textSize="16sp"
+        />
 
 </LinearLayout>
